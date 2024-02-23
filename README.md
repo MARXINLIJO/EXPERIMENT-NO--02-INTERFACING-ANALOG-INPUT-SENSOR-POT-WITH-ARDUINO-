@@ -63,31 +63,42 @@ CIRCUIT DIAGRAM
 7.	Open the file of the program  and verify the error , clear if any errors that are existing 
 8.	Upload the program and check for the physical working. 
 9.	Ensure safety before powering up the device 
-
-
-
 **PROGRAM** 
- 
+```
+int pot;
+int led=7;
 
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
 
+void loop()
+{
+  pot=analogRead(A0);
+ // Serial.print("Value=");
+  Serial.println(pot);
+  if(pot>900)
+  {
+  digitalWrite(led, HIGH);
+  delay(500); 
+  digitalWrite(led, LOW);
+  delay(500); 
+ }
+  else{
+  digitalWrite(led, LOW);
+    delay(500);
+  }
+}
+```
 
-
-
-
-
-
-
-**
 **Simulation output:** 
-**
+## ON CONDITION
+![Screenshot 2024-02-16 160722](https://github.com/MARXINLIJO/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/145742540/70026c1a-5765-46fb-937b-961737e6191b)
+##OFF CONDITION
+![Screenshot 2024-02-16 160739](https://github.com/MARXINLIJO/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/145742540/dd5ee0a5-fe8a-4abc-94c5-5446ab65850a)
 
-
-[My image](username.github.com/repository/img/image.jpg)
-
-
-
-
-
-
+![Screenshot 2024-02-23 102145](https://github.com/MARXINLIJO/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/145742540/df8f6eb8-5200-4930-a646-022684b86f3b)
 
 **RESULT: ** Arduino uno analog input functioning is learned and interfaced with digital input switch .
